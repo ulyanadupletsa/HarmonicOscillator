@@ -1,0 +1,14 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+double action(void) {
+	double m = 1;
+	double omega = 1;
+	double S = 0;
+	for(i=0; i = N-1; ++i) {
+		S = S + (0.5*xx[i+1] - xx[i])*(0.5*xx[i+1] - xx[i]) + 0.5*m*omega*(xx[i]*xx[i])
+	}
+	
+	return S;
+}
+

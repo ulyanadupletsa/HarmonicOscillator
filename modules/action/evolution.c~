@@ -1,0 +1,35 @@
+#define EVOLUTION_C
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h> 
+#include "global.h"
+#include "action.h"
+#include "random.h"
+
+void evolution(float S[]) {
+
+	int i = 0;
+	int j = 0;
+	double y;
+	double delta;
+	float R[2*N];
+	
+	for(i = 0; i < Nconf - 1; i++) {
+			
+		ranlxs(R, 2*N);		
+		
+		for(j = 1; j < N + 1; j++) {
+			y = xx[j%N] + 2*D*(R[2*j]- 0.5);	
+			delta = deltas(y, j);
+		
+				if (exp(-delta) > R[2*j +1]) {
+					xx[j%N] = y;
+				} 
+		}
+		
+		S[i] = action();
+	}		
+	
+}
+

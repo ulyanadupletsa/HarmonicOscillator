@@ -1,0 +1,19 @@
+#define OSARM_C
+#include <stdlib.h>
+#include <stdio.h>
+#include "global.h"
+#include "action.h"
+
+
+double action(void) {
+	double m = 1;
+	double omega = 1;
+	double S = 0;
+	int i;
+	for(i=0; i < N; i++) {
+		S = S + 0.5*(xx[(i+1)%N] - xx[i])*(xx[(i+1)%N] - xx[i]) + 0.5*m*omega*omega*(xx[i]*xx[i]);
+
+	}
+	return S;
+}
+

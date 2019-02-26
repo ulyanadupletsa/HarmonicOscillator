@@ -1,0 +1,27 @@
+#define OA_C
+
+#include <stdlib.h>
+#include <stdio.h>
+#include "global.h"
+#include "action.h"
+
+
+double action(void) {
+	double S;
+	int i;
+	S = 0;
+
+	for(i=0; i < N; i++) {
+		S = S + 0.5*(xx[(i+1)%N] - xx[i])*(xx[(i+1)%N] - xx[i]) + 0.5*M*W*W*(xx[i]*xx[i]);
+	}
+
+	return S;
+	/*
+	  double Snew;
+	  Snew = 0;
+	  for(i = 0; i < N; i++) {
+	  	Snew = Snew + 0.5*((xx[(i+1)%N] + 2*delta*(random-0.5))- (xx[i] + 2*delta*(random-0.5)))*((xx[(i+1)%N] + 2*delta*(random-0.5))- (xx[i] + 2*delta*(random-0.5))) + 0.5*M*W*W*((xx[i] + 2*delta*(random-0.5))*(xx[i] + 2*delta*(random-0.5));*/
+	/*dS = Snew - S*/
+	/*return dS;*/
+}
+

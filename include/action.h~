@@ -1,0 +1,16 @@
+#ifndef ACTION_H
+#define ACTION_H
+
+#ifndef OA_C
+extern double action(void);
+#endif
+
+#ifndef DS_C
+extern double deltas(double r);
+#endif
+
+#ifndef EVOLUTION_C
+extern void evolution(float S[]);
+#endif
+
+#endif

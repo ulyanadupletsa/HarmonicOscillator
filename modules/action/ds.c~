@@ -1,0 +1,19 @@
+#define DS_C
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h> 
+#include "global.h"
+#include "action.h"
+#include "random.h"
+
+double deltas(double y, int j) {
+	
+	double delta;	
+
+	
+	delta = (y*y - xx[j%N]*xx[j%N])*(M + 0.5*M*W*W) + (xx[j%N] - y)*(xx[j-1] + xx[(j+1)%N]);
+	
+	return delta;		
+}
+
